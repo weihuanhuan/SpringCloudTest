@@ -13,7 +13,7 @@ public class HelloService {
     @Autowired
     RestTemplate restTemplate;
 
-    public String hiService(String name) {
-        return restTemplate.getForObject("http://EUREKA-CLIENT-HELLO/hi?name=" + name, String.class);
+    public String sayHello(String name) {
+        return restTemplate.getForObject("http://EUREKA-CLIENT-HELLO/hello?name=" + name, String.class);
     }
 }

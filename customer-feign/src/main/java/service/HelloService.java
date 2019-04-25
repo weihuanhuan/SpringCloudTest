@@ -1,6 +1,5 @@
 package service;
 
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient("eureka-client-hello")
 public interface HelloService {
 
-    @RequestMapping(value = "/hi", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     String sayHello(@RequestParam(value = "name") String name);
 }

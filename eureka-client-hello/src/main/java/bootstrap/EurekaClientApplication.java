@@ -10,7 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 
 @SpringBootApplication
-@EnableEurekaClient
+//@EnableEurekaClient
 @ComponentScan("controller")
 public class EurekaClientApplication {
 

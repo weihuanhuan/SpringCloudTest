@@ -16,8 +16,8 @@ public class HelloController {
     @Autowired
     HelloService helloService;
 
-    @GetMapping(value = "/hi")
-    public String sayHello(@RequestParam String name) {
+    @GetMapping(value = "/hello")
+    public String doHello(@RequestParam String name) {
         return helloService.sayHello(name);
     }
 }

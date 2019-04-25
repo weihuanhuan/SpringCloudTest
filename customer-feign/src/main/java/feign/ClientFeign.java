@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @EnableDiscoveryClient
+//指定要扫描的feign client的包位置
 @EnableFeignClients("service")
 public class ClientFeign {
 }

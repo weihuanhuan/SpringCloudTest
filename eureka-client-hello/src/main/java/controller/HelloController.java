@@ -14,8 +14,8 @@ public class HelloController {
     @Value("${server.port}")
     String port;
 
-    @RequestMapping("/hi")
-    public String hello(@RequestParam(value = "name", defaultValue = "foo") String name) {
-        return "hi " + name + " ,i am from port:" + port;
+    @RequestMapping("/hello")
+    public String doHello(@RequestParam(value = "name", defaultValue = "foo") String name) {
+        return "hello " + name + " ,i am from port:" + port;
     }
 }
