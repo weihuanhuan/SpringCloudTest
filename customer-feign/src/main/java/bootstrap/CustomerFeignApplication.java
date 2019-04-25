@@ -11,7 +11,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableEurekaClient
-@ComponentScan({"feign","service", "controller","bootstrap"})
+@ComponentScan({"feign","service", "controller"})
 public class CustomerFeignApplication {
 
     public static void main(String[] args) {
