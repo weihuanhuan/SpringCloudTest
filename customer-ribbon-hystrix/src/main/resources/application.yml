@@ -1,9 +1,9 @@
 spring:
   application:
-    name: customer-feign
+    name: customer-ribbon-hystrix
 
 server:
-  port: 28762
+  port: 28763
 
 eureka:
   client:

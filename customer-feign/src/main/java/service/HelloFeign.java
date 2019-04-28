@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Created by JasonFitch on 4/24/2019.
  */
 @FeignClient("eureka-client-hello")
-public interface HelloService {
+public interface HelloFeign {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     String sayHello(@RequestParam(value = "name") String name);

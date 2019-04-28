@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: router-zuul
+
+server:
+  port: 38761
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:18761/eureka/
+
+zuul:
+  routes:
+
+    ribbon:
+      path: /ribbon/**
+      serviceId: customer-ribbon
+    ribbon-hystrix:
+      path: /ribbon-hystrix/**
+      serviceId: customer-ribbon-hystrix
+
+    feign:
+      path: /feign/**
+      serviceId: customer-feign
+    feign-hystrix:
+      path: /feign-hystrix/**
+      serviceId: customer-feign-hystrix

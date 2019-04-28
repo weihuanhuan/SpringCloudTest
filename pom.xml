@@ -21,6 +21,9 @@
         <module>eureka-client-hello</module>
         <module>customer-ribbon</module>
         <module>customer-feign</module>
+        <module>customer-ribbon-hystrix</module>
+        <module>customer-feign-hystrix</module>
+        <module>router-zuul</module>
     </modules>
 
     <properties>
