@@ -24,6 +24,8 @@
         <module>customer-ribbon-hystrix</module>
         <module>customer-feign-hystrix</module>
         <module>router-zuul</module>
+        <module>config-server</module>
+        <module>config-client</module>
     </modules>
 
     <properties>
