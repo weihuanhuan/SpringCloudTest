@@ -14,3 +14,32 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:18761/eureka/
+#EUREKA-CLIENT-HELLO	n/a (1)	(1)	UP (1) - WeiHuanHuan:eureka-client-hello:18766
+#http://weihuanhuan:18766/actuator/info
+
+  instance:
+    instance-id: ${spring.application.name}:${server.port}:1.0.0
+#EUREKA-CLIENT-HELLO	n/a (1)	(1)	UP (1) - eureka-client-hello:18763:1.0.0
+#http://weihuanhuan:18766/actuator/info
+
+    hostname: localhost
+#EUREKA-CLIENT-HELLO	n/a (1)	(1)	UP (1) - eureka-client-hello:18769:1.0.0
+#http://localhost:18769/actuator/info
+
+    prefer-ip-address: true
+#EUREKA-CLIENT-HELLO	n/a (1)	(1)	UP (1) - eureka-client-hello:18768:1.0.0
+#http://192.168.1.28:18768/actuator/info
+
+    ip-address: 192.168.1.28
+#EUREKA-CLIENT-HELLO	n/a (1)	(1)	UP (1) - eureka-client-hello:18768:1.0.0
+#http://192.168.1.28:18768/actuator/info
+
+#备注系统hostname = WeiHuanHuan
+
+#spring cloud eureka 的默认注册方案是基于 hostname 的，当服务消费者调用服务器时使用的是 注册方案来构建URL，
+#   故可以通过控制 注册方式来控制最后构建的真实是使用 ip 的 还是使用 hostname 的。
+
+#   eureka.instance.instance-id       指定服务注册时的 ID
+#   eureka.instance.prefer-ip-address 服务注册时优先使用 IP 注册，对与每个需要注册的client需要单独指定这个参数，暂时没发现在服务端的统一配置。
+#   eureka.instance.hostname          手动指定hostname的名字，可以配合k8s中的service name 在istio中进行流量管理
+#   eureka.instance.ip-address        多网卡机子，指定要使用的注册 IP
