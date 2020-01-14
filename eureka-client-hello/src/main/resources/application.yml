@@ -14,7 +14,18 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:18761/eureka/
+
+#eureka 的 console 注册信息表标题
+#Instances currently registered with Eureka
+#eureka 的 console 注册信息表表头字段
+#Application	AMIs	Availability Zones	Status
+
+# eureka 的 console 中显示在应用名字后面的，是注册中心显示的实例标识信息，
+# 其格式由参数 eureka.instance.instance-id 的值来指定，显示在 status 字段中
+# 默认值是 ${hostname}:${spring.application.name}:${server.port}
 #EUREKA-CLIENT-HELLO	n/a (1)	(1)	UP (1) - WeiHuanHuan:eureka-client-hello:18766
+
+#鼠标放在注册中心显示的实例标识信息上面，其超链接跳转的地址，是注册中心返回的的服务访问地址
 #http://weihuanhuan:18766/actuator/info
 
   instance:
@@ -26,11 +37,13 @@ eureka:
 #EUREKA-CLIENT-HELLO	n/a (1)	(1)	UP (1) - eureka-client-hello:18769:1.0.0
 #http://localhost:18769/actuator/info
 
-    prefer-ip-address: true
+#    prefer-ip-address: true
 #EUREKA-CLIENT-HELLO	n/a (1)	(1)	UP (1) - eureka-client-hello:18768:1.0.0
 #http://192.168.1.28:18768/actuator/info
 
-    ip-address: 192.168.1.28
+#指定了其他的IP，且有限使用IP地址时，则注册中心会使用这个IP地址来返回地址
+#即使这个地址不存在注册中心也会使用这个地址，导致spring-gateway转发时无法连接到这个虚假的地址。
+#    ip-address: 192.168.1.28
 #EUREKA-CLIENT-HELLO	n/a (1)	(1)	UP (1) - eureka-client-hello:18768:1.0.0
 #http://192.168.1.28:18768/actuator/info
 

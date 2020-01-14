@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.jasonfitch.test</groupId>
+    <artifactId>gateway-spring</artifactId>
+    <packaging>jar</packaging>
+
+    <parent>
+        <artifactId>SpringCloudTest</artifactId>
+        <groupId>com.jasonfitch.test</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <dependencies>
+
+        <!--eureka client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
+        <!--Spring MVC found on classpath, which is incompatible with Spring Cloud Gateway at this time. Please remove spring-boot-starter-web dependency.-->
+        <!--***************************-->
+        <!--APPLICATION FAILED TO START-->
+        <!--***************************-->
+        <!--Description:-->
+        <!--Parameter 0 of method modifyRequestBodyGatewayFilterFactory in org.springframework.cloud.gateway.config.GatewayAutoConfiguration required a bean of type 'org.springframework.http.codec.ServerCodecConfigurer' that could not be found.-->
+        <!--Action:-->
+        <!--Consider defining a bean of type 'org.springframework.http.codec.ServerCodecConfigurer' in your configuration.-->
+
+        <!--restful-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-web</artifactId>-->
+        <!--</dependency>-->
+
+        <!--gateway-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
+        <!--netflix-hystrix-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+
+    </dependencies>
+
+
+</project>
